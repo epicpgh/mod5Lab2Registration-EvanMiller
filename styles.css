@@ -9,9 +9,10 @@ body {
   }
    
   .container {
-    background-color: #fff;
+    background-image: linear-gradient(rgb(233, 226, 226), rgb(154, 152, 192));
     padding: 20px 30px;
     border-radius: 8px;
+    border: darkgray solid 1px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 400px;
   }
@@ -42,9 +43,14 @@ body {
   }
    
   .form-group input:invalid {
-    border-color: #e74c3c; /* Light red for invalid built-in states */
+    border-color: #eac6c2; /* Light red for invalid built-in states */
   }
   /* You can add a .valid class if you want to style valid inputs too */
+
+  .form-group input:valid{
+    background: rgb(201, 245, 201);
+    border: darkgray solid 1px;
+  }
    
   .form-group .error-message {
     display: block;
@@ -62,7 +68,7 @@ body {
   }
    
   button[type="submit"] {
-    width: 100%;
+    width: calc(100% - 22px);
     padding: 10px;
     background-color: #3498db;
     color: white;
