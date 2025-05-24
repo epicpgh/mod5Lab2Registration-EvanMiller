@@ -4,8 +4,12 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const passwordError = document.getElementById("passwordError");
 const confirmPassword = document.getElementById("confirmPassword");
+
 const confirmError = document.getElementById("confirmPasswordError");
+
+
 const usernameError =document.getElementById("usernameError");
+
 const emailError = document.getElementById("emailError");
 
 
@@ -69,12 +73,24 @@ function validateUsername() {
     validatePassword();
     validateConfirmPassword();
 
-    localStorage.setItem("username", username.value);
+    const isValid = (!usernameError.textContent &&
+                    !emailError.textContent &&
+                    !passwordError.textContent &&
+                    !confirmError.textContent);
 
-    localStorage.setItem("email", email.value);
-  })
+    if (isValid) {
+        localStorage.setItem("username", username.value);
+
+        localStorage.setItem("email", email.value);
+        alert("Registration Submitted.");
+        form.reset();
+  }
+
+    
+
+
+    
 
 
 
 
- 
